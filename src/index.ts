@@ -52,7 +52,7 @@ function dateFormat(date: Date | number | null, format = 'YYYYMMDD-hhmmss') {
 function getChangedFiles() {
   let list = execSync('git status --porcelain -z -u', { encoding: 'utf8' }).trim().split('\0');
   return list
-    .map(item => item.replace(/^\S+ /, ''))
+    .map(item => item.replace(/^ *\S* +/, '')) // TODO: 优化
     .filter(v => v)
     .sort();
 }
