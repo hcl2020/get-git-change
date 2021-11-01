@@ -2,8 +2,8 @@
   "name": "get-git-change",
   "version": "0.0.1",
   "description": "",
-  "main": "src/index.js",
   "scripts": {
+    "build": "tsc",
     "dev": "ts-node-dev --transpile-only --respawn --project tsconfig.json src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -26,6 +26,16 @@
   ],
   "author": "",
   "license": "MIT",
+  "main": "./lib/index.js",
+  "typings": "./lib/index.d.ts",
+  "bin": {
+    "get-git-change": "./bin/get-git-change",
+    "ggc": "./bin/ggc"
+  },
+  "files": [
+    "bin/*",
+    "lib/*"
+  ],
   "bugs": {
     "url": "https://github.com/hcl2020/get-git-change/issues"
   },
